@@ -1,1 +1,1 @@
-FROM debian:bullseye@sha256:e55700bca51daa59dc76756342a7a7e0f3d51cd72cadebde0c1b11e7a9d412ed
+FROM debian:bullseye@sha256:fb45fd4e25abe55a656ca69a7bef70e62099b8bb42a279a5e0ea4ae1ab410e0d
