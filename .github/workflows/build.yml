@@ -19,8 +19,9 @@ jobs:
           images: schaenzer/toolbox
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=sha
+            type=sha,format=short,prefix=,priority=100
             type=ref,event=branch
+            type=ref,event=tag
             type=ref,event=pr
             type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
       -
