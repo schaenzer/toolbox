@@ -1,0 +1,11 @@
+{
+  "packageRules": [
+    {
+      "matchManagers": ["dockerfile"],
+      "semanticCommitScope": "images",
+      "addLabels": ["images"],
+      "separateMajorMinor": false,
+      "separateMinorPatch": false
+    }
+  ]
+}
