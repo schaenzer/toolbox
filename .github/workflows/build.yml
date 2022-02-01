@@ -1,9 +1,6 @@
 ---
 name: Build Docker Image
-on: [push]
-
-env:
-  IMAGE_NAME: schaenzer/toolbox
+on: [push, pull_request]
 
 jobs:
   build:
@@ -19,7 +16,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           # list of Docker images to use as base name for tags
-          images: ${{IMAGE_NAME}}
+          images: schaenzer/toolbox
           # generate Docker tags based on the following events/attributes
           tags: |
             type=sha
