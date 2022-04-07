@@ -1,9 +1,7 @@
 {
   "packageRules": [
     {
-      "matchManagers": ["dockerfile"],
-      "semanticCommitScope": "images",
-      "addLabels": ["images"],
+      "matchManagers": ["terraform-module", "terraform-provider"],
       "separateMajorMinor": false,
       "separateMinorPatch": false
     }
