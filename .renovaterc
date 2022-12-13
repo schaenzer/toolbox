@@ -1,9 +1,43 @@
+
+
 {
-  "packageRules": [
-    {
-      "matchManagers": ["terraform-module", "terraform-provider"],
-      "separateMajorMinor": false,
-      "separateMinorPatch": false
-    }
-  ]
+    "enabled": true,
+    "timezone": "Europe/Berlin",
+    "semanticCommits": "enabled",
+    "dependencyDashboard": true,
+    "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+    "rebaseWhen": "auto",
+    "commitMessageTopic": "{{depName}}",
+    "commitMessageExtra": "to {{newVersion}}",
+    "suppressNotifications": [
+      "prIgnoreNotification"
+    ],
+    "labels": [
+      "dependencies"
+    ],
+    "packageRules": [
+     {
+       "matchManagers": ["dockerfile"],
+       "semanticCommitScope": "images",
+       "addLabels": ["images"],
+       "separateMajorMinor": false,
+       "separateMinorPatch": false
+     },
+     {
+       "matchUpdateTypes": ["major"],
+       "matchManagers": ["dockerfile"],
+       "semanticCommitType": "feat"
+     },
+     {
+       "matchUpdateTypes": ["minor"],
+       "matchManagers": ["dockerfile"],
+       "semanticCommitType": "fix"
+     },
+     {
+       "matchUpdateTypes": ["patch"],
+       "matchManagers": ["dockerfile"],
+       "semanticCommitType": "patch"
+     }
+    ],
+    "enabledManagers": ["dockerfile"]
 }
